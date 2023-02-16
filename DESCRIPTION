@@ -1,0 +1,15 @@
+Package: RcppFastAD
+Type: Package
+Title: Rcpp bindings to FastAD Auto-Differentiation
+Version: 0.0.1
+Date: 2023-02-15
+Author: Dirk Eddelbuettel
+Maintainer: Dirk Eddelbuettel <edd@debian.org>
+Description: The header-only C++ template library FastAD for automatic differentiation
+ by James Yang is provided by this package.
+License: GPL (>= 2)
+Suggests: tinytest
+Encoding: UTF-8
+RoxygenNote: 6.0.1
+Imports: Rcpp (>= 1.0.10), RcppEigen
+LinkingTo: Rcpp, RcppEigen
