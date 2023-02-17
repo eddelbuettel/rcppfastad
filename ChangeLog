@@ -1,3 +1,11 @@
+2023-02-17  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/black_scholes.cpp (black_scholes): Renamed function and file,
+	extended to take argument, and return a result matrix
+	* man/black_scholes.Rd: Idem
+        * src/RcppExport.cpp: Idem
+        * R/RcppExports.R: Idem
+
 2023-02-16  Dirk Eddelbuettel  <edd@debian.org>
 
 	* src/black_scholes_example.cpp (black_scholes_example): Also compute

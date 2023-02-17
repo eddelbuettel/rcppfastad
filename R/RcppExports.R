@@ -6,10 +6,11 @@
 #' This example illustrate how to use automatic differentiation to
 #' calculate the delte of a Black-Scholes call and put. It is based
 #' on the same example in the FastAD sources.
-#' @return No value is returned as the function prints to stdout
+#' @return A matrix with rows for the call and put variant, and columns
+#' for option value, delta and vega
 #' @examples
 #' black_scholes_example()
-black_scholes_example <- function() {
-    invisible(.Call('_RcppFastAD_black_scholes_example', PACKAGE = 'RcppFastAD'))
+black_scholes <- function(spot = 105, strike = 100, vol = 5, r = 1.25 / 100, tau = 30.0 / 365) {
+    .Call('_RcppFastAD_black_scholes', PACKAGE = 'RcppFastAD', spot, strike, vol, r, tau)
 }
 

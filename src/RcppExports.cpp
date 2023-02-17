@@ -11,18 +11,24 @@ Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
 Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
-// black_scholes_example
-void black_scholes_example();
-RcppExport SEXP _RcppFastAD_black_scholes_example() {
+// black_scholes
+Rcpp::NumericMatrix black_scholes(double spot, double strike, double vol, double r, double tau);
+RcppExport SEXP _RcppFastAD_black_scholes(SEXP spotSEXP, SEXP strikeSEXP, SEXP volSEXP, SEXP rSEXP, SEXP tauSEXP) {
 BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    black_scholes_example();
-    return R_NilValue;
+    Rcpp::traits::input_parameter< double >::type spot(spotSEXP);
+    Rcpp::traits::input_parameter< double >::type strike(strikeSEXP);
+    Rcpp::traits::input_parameter< double >::type vol(volSEXP);
+    Rcpp::traits::input_parameter< double >::type r(rSEXP);
+    Rcpp::traits::input_parameter< double >::type tau(tauSEXP);
+    rcpp_result_gen = Rcpp::wrap(black_scholes(spot, strike, vol, r, tau));
+    return rcpp_result_gen;
 END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_RcppFastAD_black_scholes_example", (DL_FUNC) &_RcppFastAD_black_scholes_example, 0},
+    {"_RcppFastAD_black_scholes", (DL_FUNC) &_RcppFastAD_black_scholes, 5},
     {NULL, NULL, 0}
 };
 
