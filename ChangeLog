@@ -1,3 +1,11 @@
+2023-02-18  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/quadratic_expression.cpp (quadratic_expression): New example
+	for evaluating X' * Sigma * X and returning gradient of X
+	* man/quadratic_expression.Rd: Idem
+        * src/RcppExport.cpp: Idem
+        * R/RcppExports.R: Idem
+
 2023-02-17  Dirk Eddelbuettel  <edd@debian.org>
 
 	* src/black_scholes.cpp (black_scholes): Renamed function and file,

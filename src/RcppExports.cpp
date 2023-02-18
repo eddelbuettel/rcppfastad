@@ -26,9 +26,22 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// quadratic_expression
+Rcpp::List quadratic_expression(Eigen::Map<Eigen::VectorXd> X, Eigen::Map<Eigen::MatrixXd> Sigma);
+RcppExport SEXP _RcppFastAD_quadratic_expression(SEXP XSEXP, SEXP SigmaSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Eigen::Map<Eigen::VectorXd> >::type X(XSEXP);
+    Rcpp::traits::input_parameter< Eigen::Map<Eigen::MatrixXd> >::type Sigma(SigmaSEXP);
+    rcpp_result_gen = Rcpp::wrap(quadratic_expression(X, Sigma));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_RcppFastAD_black_scholes", (DL_FUNC) &_RcppFastAD_black_scholes, 5},
+    {"_RcppFastAD_quadratic_expression", (DL_FUNC) &_RcppFastAD_quadratic_expression, 2},
     {NULL, NULL, 0}
 };
 
