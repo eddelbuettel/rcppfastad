@@ -2,10 +2,23 @@
 % Please edit documentation in R/RcppExports.R
 \name{black_scholes}
 \alias{black_scholes}
-\title{Black-Scholes via AD}
+\title{Black-Scholes valuation and first derivatives via Automatic Differentiation}
 \usage{
 black_scholes(spot = 105, strike = 100, vol = 5, r = 1.25/100,
   tau = 30/365)
+}
+\arguments{
+\item{spot}{A double with the spot price, default is 105 as in Boost example}
+
+\item{strike}{A double with the strike price, default is 100 as in Boost example}
+
+\item{vol}{A double with the (annualized) volatility (in percent), default is 5
+(for 500 per cent) as in Boost example}
+
+\item{r}{A double with the short-term risk-free rate, default is 0.0125 as in Boost example}
+
+\item{tau}{A double with the time to expiration (in fractional years), default is 30/365
+as in Boost example}
 }
 \value{
 A matrix with rows for the call and put variant, and columns
@@ -17,5 +30,5 @@ calculate the delte of a Black-Scholes call and put. It is based
 on the same example in the FastAD sources.
 }
 \examples{
-black_scholes_example()
+black_scholes()
 }

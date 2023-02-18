@@ -39,15 +39,22 @@ auto black_scholes_option_price(const Price& S,
     }
 }
 
-//' Black-Scholes via AD
+//' Black-Scholes valuation and first derivatives via Automatic Differentiation
 //'
 //' This example illustrate how to use automatic differentiation to
 //' calculate the delte of a Black-Scholes call and put. It is based
 //' on the same example in the FastAD sources.
+//' @param spot A double with the spot price, default is 105 as in Boost example
+//' @param strike A double with the strike price, default is 100 as in Boost example
+//' @param vol A double with the (annualized) volatility (in percent), default is 5
+//' (for 500 per cent) as in Boost example
+//' @param r A double with the short-term risk-free rate, default is 0.0125 as in Boost example
+//' @param tau A double with the time to expiration (in fractional years), default is 30/365
+//' as in Boost example
 //' @return A matrix with rows for the call and put variant, and columns
 //' for option value, delta and vega
 //' @examples
-//' black_scholes_example()
+//' black_scholes()
 // [[Rcpp::export]]
 Rcpp::NumericMatrix black_scholes(double spot = 105,   		// current spot
                                   double strike = 100, 		// strike
