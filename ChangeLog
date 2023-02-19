@@ -1,3 +1,7 @@
+2023-02-19  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/black_scholes.cpp (black_scholes): Also provide rho and theta
+
 2023-02-18  Dirk Eddelbuettel  <edd@debian.org>
 
 	* src/quadratic_expression.cpp (quadratic_expression): New example
