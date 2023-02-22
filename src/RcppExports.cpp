@@ -26,6 +26,19 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// linear_regression
+Rcpp::List linear_regression(Eigen::Map<Eigen::VectorXd> theta_hat, Eigen::Map<Eigen::VectorXd> y, Eigen::Map<Eigen::MatrixXd> X);
+RcppExport SEXP _RcppFastAD_linear_regression(SEXP theta_hatSEXP, SEXP ySEXP, SEXP XSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< Eigen::Map<Eigen::VectorXd> >::type theta_hat(theta_hatSEXP);
+    Rcpp::traits::input_parameter< Eigen::Map<Eigen::VectorXd> >::type y(ySEXP);
+    Rcpp::traits::input_parameter< Eigen::Map<Eigen::MatrixXd> >::type X(XSEXP);
+    rcpp_result_gen = Rcpp::wrap(linear_regression(theta_hat, y, X));
+    return rcpp_result_gen;
+END_RCPP
+}
 // quadratic_expression
 Rcpp::List quadratic_expression(Eigen::Map<Eigen::VectorXd> X, Eigen::Map<Eigen::MatrixXd> Sigma);
 RcppExport SEXP _RcppFastAD_quadratic_expression(SEXP XSEXP, SEXP SigmaSEXP) {
@@ -41,6 +54,7 @@ END_RCPP
 
 static const R_CallMethodDef CallEntries[] = {
     {"_RcppFastAD_black_scholes", (DL_FUNC) &_RcppFastAD_black_scholes, 5},
+    {"_RcppFastAD_linear_regression", (DL_FUNC) &_RcppFastAD_linear_regression, 3},
     {"_RcppFastAD_quadratic_expression", (DL_FUNC) &_RcppFastAD_quadratic_expression, 2},
     {NULL, NULL, 0}
 };
