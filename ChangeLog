@@ -6,6 +6,8 @@
         * src/RcppExport.cpp: Idem
         * R/RcppExports.R: Idem
 
+	* inst/tinytest/test_RcppFastAD.R: Add minimal tests
+
 2023-02-19  Dirk Eddelbuettel  <edd@debian.org>
 
 	* src/black_scholes.cpp (black_scholes): Also provide rho and theta

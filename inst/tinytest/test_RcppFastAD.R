@@ -1,4 +1,17 @@
 
-# Placeholder with simple test
-expect_equal(1 + 1, 2)
+library(RcppFastAD)
 
+bs <- black_scholes()
+expect_equal(dim(bs), c(2,5))
+expect_equal(colnames(bs), c("value", "delta", "vega", "rho", "theta"))
+expect_equal(rownames(bs), c("call", "put"))
+expect_equal(bs[1, "value"], 56.5136, tolerance=1e-4)
+expect_equal(bs[1, "delta"], 0.77382, tolerance=1e-4)
+expect_equal(bs[1, "vega"], 9.05493, tolerance=1e-4)
+expect_equal(bs[1, "rho"], 2.03321, tolerance=1e-4)
+expect_equal(bs[1, "theta"], 275.73, tolerance=1e-4)
+expect_equal(bs[2, "value"], 51.4109, tolerance=1e-4)
+expect_equal(bs[2, "delta"],-0.22618, tolerance=1e-4)
+expect_equal(bs[2, "vega"], 9.05493, tolerance=1e-4)
+expect_equal(bs[2, "rho"],-6.17753, tolerance=1e-4)
+expect_equal(bs[2, "theta"], 274.48, tolerance=1e-4)
