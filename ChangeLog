@@ -1,7 +1,11 @@
+2023-02-23  Dirk Eddelbuettel  <edd@debian.org>
+
+	* .github/workflows/ci.yaml (jobs): Turn on CI
+
 2023-02-22  Dirk Eddelbuettel  <edd@debian.org>
 
-	* src/linear_regression.cpp: Example of evaluating a linear
-	regression at a given parameter estimate
+	* src/linear_regression.cpp (linear_regression): Example of
+	evaluating a linear regression at a given parameter estimate
 	* man/linear_regression.Rd: Idem
         * src/RcppExport.cpp: Idem
         * R/RcppExports.R: Idem
