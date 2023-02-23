@@ -1,5 +1,6 @@
 2023-02-23  Dirk Eddelbuettel  <edd@debian.org>
 
+	* README.md: Added
 	* .github/workflows/ci.yaml (jobs): Turn on CI
 
 2023-02-22  Dirk Eddelbuettel  <edd@debian.org>
