@@ -12,10 +12,11 @@
 //' @param X Matrix with independent explanatory variables
 //' @return A list object with the \sQuote{loss} and \sQuote{gradient}
 //' @examples
-//' beta_guess <- c(1,2)
-//' y <- c(32,64,96,128,160)
-//' X <- matrix(c(1,10,2,20,3,30,4,40,5,50), ncol=2, byrow=TRUE)
-//' linear_regression(beta_guess, y, X)
+//' data(trees)   # also used in help(lm)
+//' X <- as.matrix(cbind(const=1, trees[, c("Girth", "Height")]))
+//' y <- trees$Volume
+//' linear_regression(X, y, rep(0, 3), tol=1e-12)
+//' coef(lm(y ~ X - 1))  # for comparison
 // [[Rcpp::export]]
 Rcpp::List linear_regression(Eigen::Map<Eigen::MatrixXd> X,
                              Eigen::Map<Eigen::VectorXd> y,

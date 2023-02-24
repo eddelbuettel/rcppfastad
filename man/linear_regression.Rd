@@ -4,14 +4,15 @@
 \alias{linear_regression}
 \title{Evaluate a squared-loss linear regression at a given parameter value}
 \usage{
-linear_regression(theta_hat, y, X)
+linear_regression(X, y, theta_hat, initial_lr = 0.1, max_iter = 100L,
+  tol = 1e-07)
 }
 \arguments{
-\item{theta_hat}{Vector of parameters}
+\item{X}{Matrix with independent explanatory variables}
 
 \item{y}{Vector with dependent variable}
 
-\item{X}{Matrix with independent explanatory variables}
+\item{theta_hat}{Vector of parameters}
 }
 \value{
 A list object with the \sQuote{loss} and \sQuote{gradient}
@@ -21,8 +22,9 @@ Not that this function does not actually fit the model. Rather it evaluates
 the squared sum of residuals and \sQuote{gradient} of parameters.
 }
 \examples{
-beta_guess <- c(1,2)
-y <- c(32,64,96,128,160)
-X <- matrix(c(1,10,2,20,3,30,4,40,5,50), ncol=2, byrow=TRUE)
-linear_regression(beta_guess, y, X)
+data(trees)   # also used in help(lm)
+X <- as.matrix(cbind(const=1, trees[, c("Girth", "Height")]))
+y <- trees$Volume
+linear_regression(X, y, rep(0, 3), tol=1e-12)
+coef(lm(y ~ X - 1))  # for comparison
 }

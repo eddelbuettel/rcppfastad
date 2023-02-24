@@ -1,7 +1,13 @@
+2023-02-24  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/linear_regression.cpp: Add example using data(trees)
+	* man/linear_regression.Rd: Idem
+
 2023-02-24  James Yang  <jamesyang916@gmail.com>
 
 	* src/linear_regression.cpp (linear_regression): Use gradient descent
 	together with squared loss to fit model
+	* man/linear_regression.Rd: Updated
 
 2023-02-23  Dirk Eddelbuettel  <edd@debian.org>
 
