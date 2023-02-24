@@ -21,7 +21,7 @@
 Rcpp::List linear_regression(Eigen::Map<Eigen::MatrixXd> X,
                              Eigen::Map<Eigen::VectorXd> y,
                              Eigen::Map<Eigen::VectorXd> theta_hat,
-                             double initial_lr=0.1,
+                             double initial_lr=1e-4,
                              size_t max_iter=100,
                              double tol=1e-7) {
     // Perform gradient descent (Barzilai-Borwein Method):
@@ -62,14 +62,15 @@ Rcpp::List linear_regression(Eigen::Map<Eigen::MatrixXd> X,
     update_invariant(initial_lr);
     
     size_t iter = 0;
-    while ((iter < max_iter) && (std::abs(loss-prev_loss) >= tol)) {
+    while ((iter < max_iter) && (std::abs(loss-prev_loss) >= tol * std::abs(prev_loss))) {
         prev_loss = loss;
         loss = ad::autodiff(expr); 
         
         // compute smart learning rate
         const auto dtheta = theta_hat_curr - theta_hat_prev;
         const auto ddf = theta_adj_curr - theta_adj_prev;
-        const auto gamma = std::abs(dtheta.dot(ddf)) / ddf.squaredNorm();
+        const auto ddf_l2 = ddf.squaredNorm();
+        const auto gamma = (ddf_l2 < 1e-14) ? 0 : std::abs(dtheta.dot(ddf)) / ddf_l2;
 
         update_invariant(gamma);
 
