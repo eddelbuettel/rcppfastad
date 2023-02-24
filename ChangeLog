@@ -6,6 +6,8 @@
 	* DESCRIPTION: Tweaks and edits
 	* NAMESPACE: Idem
 
+	* src/linear_regression.cpp (linear_regression): Much more compact
+	code (as suggested by James in #1)
 	* src/quadratic_expression.cpp (quadratic_expression): Use a view for
 	the sigma matrix (as suggested by James in #2)
 
