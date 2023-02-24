@@ -7,10 +7,16 @@
 //' Not that this function does not actually fit the model. Rather it evaluates
 //' the squared sum of residuals and \sQuote{gradient} of parameters.
 //'
-//' @param theta_hat Vector of parameters
-//' @param y Vector with dependent variable
 //' @param X Matrix with independent explanatory variables
-//' @return A list object with the \sQuote{loss} and \sQuote{gradient}
+//' @param y Vector with dependent variable
+//' @param theta_hat Vector with initial \sQuote{guess} of parameter values
+//' @param initial_lr [Optional] Scalar with initial step-size value,
+//' default is 1e-4
+//' @param max_iter [Optional] Scalar with maximum number of iterations,
+//' default is 100
+//' @param tol [Optional] Scalar with convergence tolerance, default is 1e-7
+//' @return A list object with the \sQuote{loss}, \sQuote{theta} (parameters),
+//' \sQuote{gradient} and \sQuote{iter} for iterations
 //' @examples
 //' data(trees)   # also used in help(lm)
 //' X <- as.matrix(cbind(const=1, trees[, c("Girth", "Height")]))
