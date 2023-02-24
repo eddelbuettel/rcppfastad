@@ -35,8 +35,8 @@ black_scholes <- function(spot = 105, strike = 100, vol = 5, r = 1.25 / 100, tau
 #' y <- c(32,64,96,128,160)
 #' X <- matrix(c(1,10,2,20,3,30,4,40,5,50), ncol=2, byrow=TRUE)
 #' linear_regression(beta_guess, y, X)
-linear_regression <- function(theta_hat, y, X) {
-    .Call('_RcppFastAD_linear_regression', PACKAGE = 'RcppFastAD', theta_hat, y, X)
+linear_regression <- function(X, y, theta_hat, initial_lr = 0.1, max_iter = 100L, tol = 1e-7) {
+    .Call('_RcppFastAD_linear_regression', PACKAGE = 'RcppFastAD', X, y, theta_hat, initial_lr, max_iter, tol)
 }
 
 #' Compute the value and derivate of a quadratic expression X' * Sigma * X
