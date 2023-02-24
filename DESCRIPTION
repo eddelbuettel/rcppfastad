@@ -2,7 +2,7 @@ Package: RcppFastAD
 Type: Package
 Title: 'Rcpp' Bindings to 'FastAD' Auto-Differentiation
 Version: 0.0.1
-Date: 2023-02-23
+Date: 2023-02-24
 Author: Dirk Eddelbuettel and James Yang
 Maintainer: Dirk Eddelbuettel <edd@debian.org>
 Description: The header-only C++ template library 'FastAD' for automatic differentiation
