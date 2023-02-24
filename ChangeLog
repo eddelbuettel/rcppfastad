@@ -6,6 +6,9 @@
 	* DESCRIPTION: Tweaks and edits
 	* NAMESPACE: Idem
 
+	* src/quadratic_expression.cpp (quadratic_expression): Use a view for
+	the sigma matrix (as suggested by James in #2)
+
 2023-02-22  Dirk Eddelbuettel  <edd@debian.org>
 
 	* src/linear_regression.cpp (linear_regression): Example of

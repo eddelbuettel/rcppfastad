@@ -21,8 +21,8 @@ Rcpp::List quadratic_expression(Eigen::Map<Eigen::VectorXd> X,
     // Initialize variable.
     ad::VarView<double, ad::mat> x(X.data(), x_adj.data(), 2, 1);
 
-    // Initialize (constant) Sigma matrix.
-    auto CSigma = ad::constant(Sigma);
+    // Initialize (constant) Sigma matrix as a view.
+    auto CSigma = ad::constant_view(Sigma.data(), Sigma.rows(), Sigma.cols());
 
     // Quadratic expression: x^T*Sigma*x
     auto expr = ad::bind(ad::dot(ad::dot(ad::transpose(x), CSigma), x));
