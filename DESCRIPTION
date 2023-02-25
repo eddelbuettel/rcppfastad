@@ -9,9 +9,9 @@ Authors@R: c(person(given = "Dirk", family = "Eddelbuettel",
              person(given = "James", family = "Yang",
                     role = "aut", email = "jamesyang916@gmail.com",
                     comment = c(ORCID = "0000-0002-0015-7812")))
-Description: The header-only C++ template library 'FastAD' for automatic differentiation
- by James Yang is provided by this package, along with a few illustrative examples that
- can be called from R.
+Description: The header-only 'C++' template library 'FastAD' for automatic differentiation
+ <https://https://github.com/JamesYang007/FastAD> is provided by this package, along with
+ a few illustrative examples that can all be called from R.
 License: GPL (>= 2)
 Suggests: tinytest
 Encoding: UTF-8
