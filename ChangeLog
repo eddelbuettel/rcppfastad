@@ -1,3 +1,7 @@
+2023-02-27  Dirk Eddelbuettel  <edd@debian.org>
+
+	* README.md: Additional badges
+
 2023-02-25  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version, Date): Release 0.0.1
