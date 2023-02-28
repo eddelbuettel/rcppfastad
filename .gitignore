@@ -38,3 +38,6 @@ vignettes/*.pdf
 # Binaries
 *.o
 *.so
+
+# Emacs
+*~
