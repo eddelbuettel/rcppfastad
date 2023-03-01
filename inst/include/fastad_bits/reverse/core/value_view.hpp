@@ -54,8 +54,11 @@ struct ValueView<ValueType, scl>
      * Binds value pointer to view the same value that val_begin points to.
      * @return  the next pointer from val_begin that is not viewed by current object.
      */
-    value_t* bind(value_t* begin)
-    { val_ = begin; return val_ + this->size(); }
+    value_t* bind(value_t* begin) {
+      if (begin == nullptr) return nullptr;
+      val_ = begin;
+      return val_ + this->size();
+    }
 
     /**
      * Returns the raw pointer to the first value viewed by current object.
