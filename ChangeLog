@@ -1,3 +1,14 @@
+2023-03-02  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/tinytest/test_black_scholes.R: Renamed
+	* inst/quadratic_expression.R: New tests
+	* inst/linear_regression.R: New tests
+
+2023-03-01  Dirk Eddelbuettel  <edd@debian.org>
+
+	* inst/include/fastad_bits/reverse/core/value_view.hpp: Protect
+	one expression from nullptr
+
 2023-02-28  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (URL, BugReports): Added
