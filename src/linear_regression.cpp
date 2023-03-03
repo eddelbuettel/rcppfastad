@@ -84,8 +84,8 @@ Rcpp::List linear_regression(Eigen::Map<Eigen::MatrixXd> X,
     }
 
     Rcpp::List res = Rcpp::List::create(Rcpp::Named("loss") = loss,
-                                        Rcpp::Named("theta") = theta_hat_prev,
-                                        Rcpp::Named("gradient") = theta_adj_prev,
+                                        Rcpp::Named("theta") = theta_hat_prev.col(0),
+                                        Rcpp::Named("gradient") = theta_adj_prev.col(0),
                                         Rcpp::Named("iter") = iter);
 
     return res;

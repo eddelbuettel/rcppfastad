@@ -32,8 +32,8 @@ Rcpp::List quadratic_expression(Eigen::Map<Eigen::VectorXd> X,
     // Auto differential.
     auto f = ad::autodiff(expr, seed.array());
 
-    Rcpp::List res = Rcpp::List::create(Rcpp::Named("value") = f,
-                                        Rcpp::Named("gradient") = x.get_adj());
+    Rcpp::List res = Rcpp::List::create(Rcpp::Named("value") = f(0,0),
+                                        Rcpp::Named("gradient") = x.get_adj().col(0));
 
     return res;
 }

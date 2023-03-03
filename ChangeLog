@@ -1,3 +1,11 @@
+2023-03-03  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/linear_regression.cpp (linear_regression): Return theta
+	and gradient as vectors instead of (oversized) matrices
+	* src/quadratic_expression.cpp (quadratic_expression): Return
+	scalar and vector instead of two (oversized) matrices
+	* inst/tinytest/test_quadratic_expression.R: Adjusted
+
 2023-03-02  Dirk Eddelbuettel  <edd@debian.org>
 
 	* inst/tinytest/test_black_scholes.R: Renamed
