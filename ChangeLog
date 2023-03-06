@@ -1,3 +1,13 @@
+2023-03-05  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Release 0.0.2
+
+2023-03-03  James Yang  <jamesyang916@gmail.com>
+
+	* src/linear_regression.cpp (linear_regression): Further
+	simplification
+	* src/quadratic_expression.cpp (quadratic_expression): Idem
+
 2023-03-03  Dirk Eddelbuettel  <edd@debian.org>
 
 	* src/linear_regression.cpp (linear_regression): Return theta
