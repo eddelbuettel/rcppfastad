@@ -1,5 +1,5 @@
 \name{NEWS}
-\title{News for Package \pkg{RcppFastFloat}}
+\title{News for Package \pkg{RcppFastAD}}
 \newcommand{\ghpr}{\href{https://github.com/eddelbuettel/rcppfastad/pull/#1}{##1}}
 \newcommand{\ghit}{\href{https://github.com/eddelbuettel/rcppfastad/issues/#1}{##1}}
 
