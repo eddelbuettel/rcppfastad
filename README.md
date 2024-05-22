@@ -4,7 +4,7 @@
 [![CI](https://github.com/eddelbuettel/rcppfastad/workflows/ci/badge.svg)](https://github.com/eddelbuettel/rcppfastad/actions?query=workflow%3Aci)
 [![License](https://eddelbuettel.github.io/badges/GPL2+.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
 [![CRAN](https://www.r-pkg.org/badges/version/RcppFastAD)](https://cran.r-project.org/package=RcppFastAD)
-[![Dependencies](https://tinyverse.netlify.com/badge/RcppFastAD)](https://cran.r-project.org/package=RcppFastAD)
+[![Dependencies](https://tinyverse.netlify.app/badge/RcppFastAD)](https://cran.r-project.org/package=RcppFastAD)
 [![Last Commit](https://img.shields.io/github/last-commit/eddelbuettel/rcppfastad)](https://github.com/eddelbuettel/rcppfastad)
 
 ### Motivation
