@@ -3,6 +3,15 @@
 \newcommand{\ghpr}{\href{https://github.com/eddelbuettel/rcppfastad/pull/#1}{##1}}
 \newcommand{\ghit}{\href{https://github.com/eddelbuettel/rcppfastad/issues/#1}{##1}}
 
+\section{Changes in version 0.0.3 (2024-09-15)}{
+  \itemize{
+    \item The package now compiles under the C++20 standard to avoid a warning
+    under \code{clang++-18} (Dirk addressing \ghit{9})
+    \item Minor updates to continuous integration and badges have been made
+    as well
+  }
+}
+
 \section{Changes in version 0.0.2 (2023-03-05)}{
   \itemize{
     \item One C++ operation is protected from operating on a

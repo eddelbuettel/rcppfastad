@@ -1,8 +1,8 @@
 Package: RcppFastAD
 Type: Package
 Title: 'Rcpp' Bindings to 'FastAD' Auto-Differentiation
-Version: 0.0.2
-Date: 2023-03-05
+Version: 0.0.3
+Date: 2024-09-15
 Authors@R: c(person(given = "Dirk", family = "Eddelbuettel",
                     role = c("aut", "cre"), email = "edd@debian.org", 
                     comment = c(ORCID = "0000-0001-6419-907X")),
