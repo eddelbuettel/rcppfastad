@@ -35,7 +35,14 @@
 // } 
 //
 // Note that we only compute std::exp(x.get_value()) once and reuse to compute both "first" and "second".
-#define FORWARD_UNARY_FUNC(f, first, second, ...) \
+#define FORWARD_UNARY_FUNC(f, first, second) \
+template <class T> \
+inline auto f(const ad::core::ADForward<T>& x) \
+{ \
+	return ad::core::ADForward<T>(first, second); \
+} \
+
+#define FORWARD_UNARY_FUNC_PRE(f, first, second, ...) \
 template <class T> \
 inline auto f(const ad::core::ADForward<T>& x) \
 { \
@@ -112,7 +119,7 @@ FORWARD_UNARY_FUNC(sin, std::sin(x.get_value()),
 FORWARD_UNARY_FUNC(cos, std::cos(x.get_value()), 
         -std::sin(x.get_value())*x.get_adjoint())
 // ad::tan(core::ADForward)
-FORWARD_UNARY_FUNC(tan, std::tan(x.get_value()), 
+FORWARD_UNARY_FUNC_PRE(tan, std::tan(x.get_value()), 
         tmp*tmp * x.get_adjoint(), auto tmp = 1 / std::cos(x.get_value());)
 // ad::asin(core::ADForward)
 FORWARD_UNARY_FUNC(asin, std::asin(x.get_value()), 
@@ -124,16 +131,16 @@ FORWARD_UNARY_FUNC(acos, std::acos(x.get_value()),
 FORWARD_UNARY_FUNC(atan, std::atan(x.get_value()), 
         x.get_adjoint() / (1 + x.get_value()*x.get_value()))
 // ad::exp(core::ADForward)
-FORWARD_UNARY_FUNC(exp, tmp, tmp * x.get_adjoint(), 
+FORWARD_UNARY_FUNC_PRE(exp, tmp, tmp * x.get_adjoint(), 
         auto tmp = std::exp(x.get_value());)
 // ad::log(core::ADForward)
 FORWARD_UNARY_FUNC(log, std::log(x.get_value()), 
         x.get_adjoint() / x.get_value())
 // ad::sqrt(core::ADForward)
-FORWARD_UNARY_FUNC(sqrt, tmp, x.get_adjoint() / (2 * tmp), 
+FORWARD_UNARY_FUNC_PRE(sqrt, tmp, x.get_adjoint() / (2 * tmp), 
         auto tmp = std::sqrt(x.get_value());)
 // ad::erf(core::ADForward)
-FORWARD_UNARY_FUNC(erf, std::erf(x.get_value()), 
+FORWARD_UNARY_FUNC_PRE(erf, std::erf(x.get_value()), 
         two_over_sqrt_pi * std::exp(-t_sq), 
         static constexpr double two_over_sqrt_pi =
                 1.1283791670955126;
