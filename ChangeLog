@@ -1,3 +1,15 @@
+2024-09-16  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Roll micro version
+
+2024-09-16  James Yang  <jamesyang916@gmail.com>
+
+	* inst/include/fastad_bits/forward/core/forward.hpp: Properly address
+	clang warning on empty variadic macros arguments
+
+	* src/Makevars (CXX_STD): Switch back to C++17
+	* src/Makevars.win (CXX_STD): Idem
+
 2024-09-15  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version, Date): Release 0.0.3
