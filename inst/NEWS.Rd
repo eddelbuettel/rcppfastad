@@ -3,6 +3,13 @@
 \newcommand{\ghpr}{\href{https://github.com/eddelbuettel/rcppfastad/pull/#1}{##1}}
 \newcommand{\ghit}{\href{https://github.com/eddelbuettel/rcppfastad/issues/#1}{##1}}
 
+\section{Changes in version 0.0.4 (2024-09-24)}{
+  \itemize{
+    \item The package now properly addresses a clang warning on empty
+    variadic macros arguments and is back to C++17 (James in \ghpr{10})
+  }
+}
+
 \section{Changes in version 0.0.3 (2024-09-15)}{
   \itemize{
     \item The package now compiles under the C++20 standard to avoid a warning

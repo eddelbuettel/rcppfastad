@@ -40,12 +40,6 @@ volatility, short rate and time to maturity---which are all calculated using aut
 
 The package is complete and contains a mature version of FastAD.
 
-The R package now compiles as C++20 as newer clang versions complain that one particular code
-instance uses C++20 features. If that constrains your deployment, you can dial down the C++ standard
-in [src/Makevars](https://github.com/eddelbuettel/rcppfastad/blob/master/src/Makevars) and/or
-[src/Makevars.win](https://github.com/eddelbuettel/rcppfastad/blob/master/src/Makevars.win).
-
-
 ### Contributing
 
 Any problems, bug reports, or features requests for the package can be submitted and handled most
