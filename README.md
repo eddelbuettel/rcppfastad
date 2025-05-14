@@ -18,7 +18,7 @@ adding `LinkingTo: RcppFastAD`.
 
 ### Example
 
-Three examples, taken from FastAS, are included. We can look at the `black_scholes()` one here:
+Three examples, taken from FastAD, are included. We can look at the `black_scholes()` one here:
 
 ```r
 > library(RcppFastAD)
