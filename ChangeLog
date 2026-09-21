@@ -1,3 +1,12 @@
+2026-09-21  Dirk Eddelbuettel  <edd@debian.org>
+
+	* configure: Call 'tools/configure.R'
+	* configure.win: Idem
+	* tools/configure.R: If a local build is detected due to presence of
+	'.git/', then '-Wno-ignored-attributed' is added to 'src/Makevars*'
+	* src/Makevars.in: Updated with placeholder for 'configure.R'
+	* src/Makevars.win.in: 	Idem
+
 2026-01-18  Dirk Eddelbuettel  <edd@debian.org>
 
 	* .github/workflows/ci.yaml: Switch to actions/checkout@v6
