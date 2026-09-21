@@ -1,5 +1,7 @@
 2026-09-21  Dirk Eddelbuettel  <edd@debian.org>
 
+	* DESCRIPTION (Version, Date): Roll micro-version and date
+
 	* configure: Call 'tools/configure.R'
 	* configure.win: Idem
 	* tools/configure.R: If a local build is detected due to presence of
