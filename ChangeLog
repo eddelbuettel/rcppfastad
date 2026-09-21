@@ -4,8 +4,15 @@
 	* configure.win: Idem
 	* tools/configure.R: If a local build is detected due to presence of
 	'.git/', then '-Wno-ignored-attributed' is added to 'src/Makevars*'
-	* src/Makevars.in: Updated with placeholder for 'configure.R'
+	* src/Makevars.in: Updated with placeholder for 'configure.R', also
+	note the need for '-g0' given recent compiler behavior
 	* src/Makevars.win.in: 	Idem
+
+	* .Rbuildignore: Add local/
+	* .gitignore: Idem
+
+	* .github/workflows/ci.yaml: Switch to actions/checkout@v7, add
+	ccache support as well
 
 2026-01-18  Dirk Eddelbuettel  <edd@debian.org>
 
