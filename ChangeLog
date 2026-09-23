@@ -1,3 +1,7 @@
+2026-09-23  Dirk Eddelbuettel  <edd@debian.org>
+
+	* src/Makevars.in: Mention clang++ also passes
+
 2026-09-21  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version, Date): Roll micro-version and date
@@ -7,7 +11,7 @@
 	* tools/configure.R: If a local build is detected due to presence of
 	'.git/', then '-Wno-ignored-attributed' is added to 'src/Makevars*'
 	* src/Makevars.in: Updated with placeholder for 'configure.R', also
-	note the need for '-g0' given recent compiler behavior
+	note the need for '-g0' given recent g++ compiler behavior
 	* src/Makevars.win.in: 	Idem
 
 	* .Rbuildignore: Add local/

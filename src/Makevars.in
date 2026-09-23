@@ -3,7 +3,8 @@ PKG_CPPFLAGS=-I../inst/include
 
 ## g++-16 when using optimization appears to create code that creates
 ## segfaults for the linear regression and quadratic expression
-## examples. Adding -fno-inline also helps
+## examples. Adding -fno-inline also helps. This appears to be limited
+## to -O3; using -O2 or lower works. Using clang++ also works.
 ##
 ## Now, under CRAN Policies we cannot add either one of `-fno-inline`
 ## or `-O2` (or lower) here as "not portable".  We can however set
