@@ -1,8 +1,12 @@
+2026-09-24  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Release 0.0.5
+
 2026-09-23  Dirk Eddelbuettel  <edd@debian.org>
 
 	* src/Makevars.in: Mention clang++ also passes
 
-	* README.md: Use OSI URL for GPL2 as FSF rate limits
+	* README.md: Use OSI URL for GPL-2 as FSF rate limits
 
 2026-09-21  Dirk Eddelbuettel  <edd@debian.org>
 

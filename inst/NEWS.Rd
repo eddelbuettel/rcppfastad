@@ -3,6 +3,16 @@
 \newcommand{\ghpr}{\href{https://github.com/eddelbuettel/rcppfastad/pull/#1}{##1}}
 \newcommand{\ghit}{\href{https://github.com/eddelbuettel/rcppfastad/issues/#1}{##1}}
 
+\section{Changes in version 0.0.5 (2026-09-24)}{
+  \itemize{
+    \item Several routine updates to continuous integration have been made
+    \item Local builds (where a \code{.git/} directory is seen) now append
+    silencing compiler option that CRAN would object to
+    \item Given recent issues with \code{g++} under optimization, debugging
+    is turned off by default.
+  }
+}
+
 \section{Changes in version 0.0.4 (2024-09-24)}{
   \itemize{
     \item The package now properly addresses a clang warning on empty
