@@ -1,5 +1,9 @@
 2026-09-25  Dirk Eddelbuettel  <edd@debian.org>
 
+	* inst/include/fastad_bits/reverse/core/value_view.hpp: Mark 'bind'
+	helpers non-inline as g++ can miscompile at -O3 leading to segfault;
+	also protect both from operating on a nullptr
+
 	* tools/configure.R: Also pass -Wno-maybe-uninitialized on local build
 
 2026-09-24  Dirk Eddelbuettel  <edd@debian.org>

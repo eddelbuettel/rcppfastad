@@ -2,6 +2,23 @@
 #include <cassert>
 #include <fastad_bits/util/shape_traits.hpp>
 
+// bind() rebinds the Eigen::Map-backed value/adjoint views by placement-new'ing
+// a fresh Map over the cached buffer pointers. g++ at -O3 can miscompile this
+// (it keeps a stale Map, leading to wrong dimensions and a segfault / Eigen
+// resize assertion).  Marking bind() as noinline keeps the placement-new opaque
+// to the optimizer. bind() only runs once per node when the expression is bound,
+// so the non-inlining cost is negligible.
+//
+// Dirk Eddelbuettel and DeepSeek V4 Flash, September 2026, cf issue #110
+//
+#if defined(_MSC_VER)
+#define FASTAD_NOINLINE __declspec(noinline)
+#elif defined(__GNUC__) || defined(__clang__)
+#define FASTAD_NOINLINE __attribute__((noinline))
+#else
+#define FASTAD_NOINLINE
+#endif
+
 namespace ad {
 namespace core {
 
@@ -123,8 +140,9 @@ struct ValueView<ValueType, vec>
     value_t& get(size_t i, size_t) { return val_(i); }
     const value_t& get(size_t i, size_t) const { return val_(i); }
 
-    value_t* bind(value_t* begin)
+    value_t* FASTAD_NOINLINE bind(value_t* begin)
     { 
+        if (begin == nullptr) return nullptr;
         new (&val_) var_t(begin, this->size());
         return begin + this->size(); 
     }
@@ -157,8 +175,9 @@ struct ValueView<ValueType, mat>
     value_t& get(size_t i, size_t j) { return val_(i,j); }
     const value_t& get(size_t i, size_t j) const { return val_(i,j); }
 
-    value_t* bind(value_t* begin)
+    value_t* FASTAD_NOINLINE bind(value_t* begin)
     { 
+        if (begin == nullptr) return nullptr;
         new (&val_) var_t(begin, this->rows(), this->cols());
         return begin + this->size(); 
     }
@@ -177,3 +196,5 @@ private:
 
 } // namespace core
 } // namespace ad
+
+#undef FASTAD_NOINLINE

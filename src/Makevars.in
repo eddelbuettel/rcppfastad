@@ -13,4 +13,4 @@ PKG_CPPFLAGS=-I../inst/include
 ## This also carries a tag which `tools/configure.R` replaces with
 ## '-Wno-ignored-attributes' (on "local" builds) to render the
 ## compilation a little more quiet
-PKG_CXXFLAGS=@XTRAFLAGS@ -g0
+PKG_CXXFLAGS=@XTRAFLAGS@
