@@ -1,3 +1,7 @@
+2026-09-25  Dirk Eddelbuettel  <edd@debian.org>
+
+	* tools/configure.R: Also pass -Wno-maybe-uninitialized on local build
+
 2026-09-24  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version, Date): Release 0.0.5

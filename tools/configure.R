@@ -1,7 +1,7 @@
 
 if (dir.exists(".git")) {
     ## development from a .git directory can use these flags
-    xtraflags <- "-Wno-ignored-attributes"
+    xtraflags <- "-Wno-ignored-attributes -Wno-maybe-uninitialized"
 } else {
     ## else build from tarball so stick with existing flags
     xtraflags <- ""
