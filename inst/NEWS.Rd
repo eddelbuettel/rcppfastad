@@ -10,9 +10,10 @@
     \code{Eigen::Map} resize assertion, and a segfault. 
     \item The \code{bind()} helpers are  marked non-inline and are also
     protected from operating on a \code{nullptr}.
-    \item Both items co-written with DeepSeek V4 Flash, and now in a PR
-    upstream.
+    \item Both items co-written with DeepSeek V4 Flash, and have been sent
+    upstream in a PR.
     \item Suppress another compiler warning when local build detected.
+    \item Add r-universe badge to README.md.
   }
 }
 
