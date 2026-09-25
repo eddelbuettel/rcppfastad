@@ -1,5 +1,7 @@
 2026-09-25  Dirk Eddelbuettel  <edd@debian.org>
 
+	* DESCRIPTION (Version, Date): Roll micro-version and date
+
 	* inst/include/fastad_bits/reverse/core/value_view.hpp: Mark 'bind'
 	helpers non-inline as g++ can miscompile at -O3 leading to segfault;
 	also protect both from operating on a nullptr

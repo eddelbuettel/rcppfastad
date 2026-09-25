@@ -3,6 +3,19 @@
 \newcommand{\ghpr}{\href{https://github.com/eddelbuettel/rcppfastad/pull/#1}{##1}}
 \newcommand{\ghit}{\href{https://github.com/eddelbuettel/rcppfastad/issues/#1}{##1}}
 
+\section{Changes in version 0.0.5.1 (2026-09-24)}{
+  \itemize{
+    \item The expression-template view rebinding is protected against
+    \code{g++ -O3} (which led to wrong \code{Eigen::Map} dimensions, an
+    \code{Eigen::Map} resize assertion, and a segfault. 
+    \item The \code{bind()} helpers are  marked non-inline and are also
+    protected from operating on a \code{nullptr}.
+    \item Both items co-written with DeepSeek V4 Flash, and now in a PR
+    upstream.
+    \item Suppress another compiler warning when local build detected.
+  }
+}
+
 \section{Changes in version 0.0.5 (2026-09-24)}{
   \itemize{
     \item Several routine updates to continuous integration have been made
