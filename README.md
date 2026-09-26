@@ -10,9 +10,10 @@
 
 ### Motivation
 
-[FastAD](https://github.com/JamesYang007/FastAD) is a header-only C++ template library for automatic differentiation
-supporting both forward and reverse mode.  It utilizes the latest features in C++17 and expression templates for
-efficient computation. See the [FastAD](https://github.com/JamesYang007/FastAD) repo for more.
+[FastAD](https://github.com/JamesYang007/FastAD) is a header-only C++ template library for automatic
+differentiation supporting both forward and reverse mode.  It utilizes modern C++ and expression
+templates for efficient computation. See the [FastAD](https://github.com/JamesYang007/FastAD) repo
+for more.
 
 This package brings this header-only library to R so that other R user can access it simply by
 adding `LinkingTo: RcppFastAD`.
