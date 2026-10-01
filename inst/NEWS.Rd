@@ -3,7 +3,7 @@
 \newcommand{\ghpr}{\href{https://github.com/eddelbuettel/rcppfastad/pull/#1}{##1}}
 \newcommand{\ghit}{\href{https://github.com/eddelbuettel/rcppfastad/issues/#1}{##1}}
 
-\section{Changes in version 0.0.5.1 (2026-09-24)}{
+\section{Changes in version 0.0.6 (2026-10-01)}{
   \itemize{
     \item The expression-template view rebinding is protected against
     \code{g++ -O3} (which led to wrong \code{Eigen::Map} dimensions, an

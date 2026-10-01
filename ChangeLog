@@ -1,10 +1,15 @@
+2026-09-30  Dirk Eddelbuettel  <edd@debian.org>
+
+	* DESCRIPTION (Version, Date): Release 0.0.6
+
 2026-09-25  Dirk Eddelbuettel  <edd@debian.org>
 
 	* DESCRIPTION (Version, Date): Roll micro-version and date
 
 	* inst/include/fastad_bits/reverse/core/value_view.hpp: Mark 'bind'
 	helpers non-inline as g++ can miscompile at -O3 leading to segfault;
-	also protect both from operating on a nullptr
+	also protect both from operating on a nullptr; co-written with
+	DeepSeek V4 Flash-0731, and sent upstream in a PR
 
 	* tools/configure.R: Also pass -Wno-maybe-uninitialized on local build
 
